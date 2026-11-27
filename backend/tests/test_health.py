@@ -69,5 +69,5 @@ async def test_readiness_503_when_database_unreachable(http: AsyncClient) -> Non
 async def test_openapi_schema_lists_routes(http: AsyncClient) -> None:
     paths = (await http.get("/openapi.json")).json()["paths"]
 
-    for path in ("/health", "/health/ready", "/auth/login", "/species"):
+    for path in ("/health", "/health/ready", "/auth/login", "/plants", "/species"):
         assert path in paths
