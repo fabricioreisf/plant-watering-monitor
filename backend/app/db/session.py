@@ -4,6 +4,8 @@ O engine é criado sob demanda para que importar a aplicação (por exemplo, nos
 não exija um banco acessível.
 """
 
+import asyncio
+import sys
 from collections.abc import AsyncIterator
 from functools import lru_cache
 
@@ -25,6 +27,17 @@ def get_engine() -> AsyncEngine:
 @lru_cache
 def get_sessionmaker() -> async_sessionmaker[AsyncSession]:
     return async_sessionmaker(get_engine(), expire_on_commit=False)
+
+
+def event_loop_factory() -> asyncio.AbstractEventLoop:
+    """Event loop compatível com o psycopg assíncrono.
+
+    O loop padrão do Windows (Proactor) não é suportado pelo psycopg; em Linux (Docker, CI)
+    o padrão já serve. Usado por scripts (`asyncio.run(..., loop_factory=...)`) e testes.
+    """
+    if sys.platform == "win32":
+        return asyncio.SelectorEventLoop()
+    return asyncio.new_event_loop()
 
 
 async def get_session() -> AsyncIterator[AsyncSession]:

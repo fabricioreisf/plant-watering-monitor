@@ -7,6 +7,9 @@ from sqlalchemy import create_engine, pool
 from alembic import context
 from app.core.config import get_settings
 from app.db.base import Base
+from app.models import register_models
+
+register_models()  # popula Base.metadata para o autogenerate e o `alembic check`
 
 config = context.config
 

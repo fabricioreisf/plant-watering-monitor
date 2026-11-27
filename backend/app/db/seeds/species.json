@@ -1,0 +1,191 @@
+[
+  {
+    "scientific_name": "Epipremnum aureum",
+    "common_name": "Jiboia",
+    "kc": 0.5,
+    "drying_threshold": 0.35,
+    "watering_instructions": "Regue quando os 2 a 3 cm superiores do substrato estiverem secos. Tolera esquecimentos, mas não gosta de substrato encharcado."
+  },
+  {
+    "scientific_name": "Dracaena trifasciata",
+    "common_name": "Espada-de-são-jorge",
+    "kc": 0.25,
+    "drying_threshold": 0.15,
+    "watering_instructions": "Muito resistente à seca. Regue apenas quando o substrato estiver totalmente seco; no inverno, regue ainda menos."
+  },
+  {
+    "scientific_name": "Zamioculcas zamiifolia",
+    "common_name": "Zamioculca",
+    "kc": 0.25,
+    "drying_threshold": 0.15,
+    "watering_instructions": "Armazena água nos rizomas. Regue só quando o substrato estiver completamente seco e nunca deixe água parada no prato."
+  },
+  {
+    "scientific_name": "Monstera deliciosa",
+    "common_name": "Costela-de-adão",
+    "kc": 0.6,
+    "drying_threshold": 0.4,
+    "watering_instructions": "Mantenha o substrato levemente úmido. Regue quando a camada superior secar, deixando o excesso escorrer."
+  },
+  {
+    "scientific_name": "Spathiphyllum wallisii",
+    "common_name": "Lírio-da-paz",
+    "kc": 0.7,
+    "drying_threshold": 0.5,
+    "watering_instructions": "Gosta de substrato sempre úmido, sem encharcar. Folhas murchas são sinal de sede e se recuperam logo após a rega."
+  },
+  {
+    "scientific_name": "Nephrolepis exaltata",
+    "common_name": "Samambaia",
+    "kc": 0.8,
+    "drying_threshold": 0.6,
+    "watering_instructions": "Não deixe o substrato secar. Aprecia umidade do ar alta; borrifar as folhas em dias secos ajuda."
+  },
+  {
+    "scientific_name": "Chlorophytum comosum",
+    "common_name": "Clorofito",
+    "kc": 0.5,
+    "drying_threshold": 0.35,
+    "watering_instructions": "Regue quando a superfície do substrato secar. As raízes grossas armazenam água e toleram alguns dias de atraso."
+  },
+  {
+    "scientific_name": "Aloe vera",
+    "common_name": "Babosa",
+    "kc": 0.2,
+    "drying_threshold": 0.1,
+    "watering_instructions": "Regue pouco e profundamente, só com o substrato seco. Excesso de água apodrece as raízes."
+  },
+  {
+    "scientific_name": "Echeveria elegans",
+    "common_name": "Echevéria",
+    "kc": 0.2,
+    "drying_threshold": 0.1,
+    "watering_instructions": "Suculenta: regue apenas com o substrato totalmente seco e evite molhar a roseta de folhas."
+  },
+  {
+    "scientific_name": "Schlumbergera truncata",
+    "common_name": "Flor-de-maio",
+    "kc": 0.4,
+    "drying_threshold": 0.3,
+    "watering_instructions": "Cacto de floresta: precisa de mais água que os cactos de deserto. Regue quando a camada superior secar, sem encharcar."
+  },
+  {
+    "scientific_name": "Phalaenopsis amabilis",
+    "common_name": "Orquídea-borboleta",
+    "kc": 0.4,
+    "drying_threshold": 0.3,
+    "watering_instructions": "Regue quando o substrato estiver quase seco e as raízes ficarem prateadas. Deixe escorrer bem e não acumule água no vaso."
+  },
+  {
+    "scientific_name": "Anthurium andraeanum",
+    "common_name": "Antúrio",
+    "kc": 0.6,
+    "drying_threshold": 0.45,
+    "watering_instructions": "Mantenha o substrato levemente úmido e regue quando os primeiros 2 cm secarem."
+  },
+  {
+    "scientific_name": "Philodendron martianum",
+    "common_name": "Pacová",
+    "kc": 0.6,
+    "drying_threshold": 0.4,
+    "watering_instructions": "Regue quando a superfície do substrato secar. Os pecíolos grossos armazenam água; evite encharcar."
+  },
+  {
+    "scientific_name": "Philodendron hederaceum",
+    "common_name": "Filodendro-brasil",
+    "kc": 0.55,
+    "drying_threshold": 0.4,
+    "watering_instructions": "Regue quando os 2 cm superiores do substrato estiverem secos. Folhas amareladas costumam indicar excesso de água."
+  },
+  {
+    "scientific_name": "Ficus lyrata",
+    "common_name": "Figueira-lira",
+    "kc": 0.55,
+    "drying_threshold": 0.4,
+    "watering_instructions": "Regue quando os primeiros 5 cm do substrato secarem. Não gosta de mudanças bruscas de rega nem de lugar."
+  },
+  {
+    "scientific_name": "Ficus elastica",
+    "common_name": "Falsa-seringueira",
+    "kc": 0.5,
+    "drying_threshold": 0.35,
+    "watering_instructions": "Regue quando a camada superior secar. Tolera um pouco de seca melhor do que excesso de água."
+  },
+  {
+    "scientific_name": "Goeppertia ornata",
+    "common_name": "Calateia",
+    "kc": 0.7,
+    "drying_threshold": 0.55,
+    "watering_instructions": "Mantenha o substrato úmido, sem encharcar. Prefere água sem cloro e ar úmido; pontas secas indicam ar seco ou falta de água."
+  },
+  {
+    "scientific_name": "Peperomia obtusifolia",
+    "common_name": "Peperômia",
+    "kc": 0.35,
+    "drying_threshold": 0.25,
+    "watering_instructions": "Folhas carnudas armazenam água. Regue quando o substrato estiver quase seco."
+  },
+  {
+    "scientific_name": "Begonia cucullata",
+    "common_name": "Begônia",
+    "kc": 0.7,
+    "drying_threshold": 0.5,
+    "watering_instructions": "Mantenha o substrato levemente úmido e regue na base, sem molhar as folhas."
+  },
+  {
+    "scientific_name": "Ocimum basilicum",
+    "common_name": "Manjericão",
+    "kc": 0.9,
+    "drying_threshold": 0.55,
+    "watering_instructions": "Mantenha o substrato úmido. Em vaso pequeno ao sol, pode precisar de rega diária no verão."
+  },
+  {
+    "scientific_name": "Salvia rosmarinus",
+    "common_name": "Alecrim",
+    "kc": 0.4,
+    "drying_threshold": 0.25,
+    "watering_instructions": "Prefere substrato bem drenado e mais seco. Regue quando o substrato secar; excesso de água é o erro mais comum."
+  },
+  {
+    "scientific_name": "Mentha spicata",
+    "common_name": "Hortelã",
+    "kc": 0.9,
+    "drying_threshold": 0.6,
+    "watering_instructions": "Gosta de substrato sempre úmido. Não deixe secar por completo, principalmente em dias quentes."
+  },
+  {
+    "scientific_name": "Solanum lycopersicum",
+    "common_name": "Tomate-cereja",
+    "kc": 1.05,
+    "drying_threshold": 0.5,
+    "watering_instructions": "Regue com regularidade, de preferência pela manhã e na base. Variações bruscas de umidade racham os frutos."
+  },
+  {
+    "scientific_name": "Capsicum annuum",
+    "common_name": "Pimenteira",
+    "kc": 0.9,
+    "drying_threshold": 0.5,
+    "watering_instructions": "Mantenha o substrato úmido durante a floração e a frutificação, deixando a superfície secar entre as regas."
+  },
+  {
+    "scientific_name": "Lavandula angustifolia",
+    "common_name": "Lavanda",
+    "kc": 0.35,
+    "drying_threshold": 0.2,
+    "watering_instructions": "Planta de clima seco: regue apenas quando o substrato estiver seco e garanta boa drenagem."
+  },
+  {
+    "scientific_name": "Hibiscus rosa-sinensis",
+    "common_name": "Hibisco",
+    "kc": 0.75,
+    "drying_threshold": 0.45,
+    "watering_instructions": "Precisa de bastante água na floração. Regue quando a superfície secar e aumente a frequência no calor."
+  },
+  {
+    "scientific_name": "Bougainvillea spectabilis",
+    "common_name": "Primavera",
+    "kc": 0.35,
+    "drying_threshold": 0.2,
+    "watering_instructions": "Floresce melhor com regas espaçadas. Regue quando o substrato secar bem e evite encharcar."
+  }
+]
