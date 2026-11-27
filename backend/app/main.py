@@ -4,7 +4,7 @@ import logging
 
 from fastapi import FastAPI
 
-from app.api.routes import health
+from app.api.routes import auth, health
 from app.core.config import get_settings
 
 
@@ -15,9 +15,10 @@ def create_app() -> FastAPI:
     app = FastAPI(
         title="Monitor de Plantas",
         description="Recomenda quando e como regar cada planta.",
-        version="0.1.0",
+        version="0.2.0",
     )
-    app.include_router(health.router)
+    for module in (health, auth):
+        app.include_router(module.router)
     return app
 
 

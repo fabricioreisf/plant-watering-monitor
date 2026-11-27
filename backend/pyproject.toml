@@ -12,12 +12,16 @@ dependencies = [
     "sqlalchemy[asyncio]>=2.0.36",
     "alembic>=1.14",
     "psycopg[binary]>=3.2",
+    "pyjwt>=2.10",
+    "argon2-cffi>=23.1",
+    "email-validator>=2.2",
+    "python-multipart>=0.0.17",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest>=8.3",
-    "pytest-asyncio>=0.24",
+    "pytest-asyncio>=1.5",  # hook pytest_asyncio_loop_factories (ver tests/conftest.py)
     "httpx>=0.27",
     "ruff>=0.8",
 ]
@@ -35,7 +39,9 @@ include = ["app*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
-asyncio_default_fixture_loop_scope = "function"
+# Um único event loop: o engine do banco de teste é compartilhado pela sessão inteira.
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
 
 [tool.ruff]
 line-length = 100

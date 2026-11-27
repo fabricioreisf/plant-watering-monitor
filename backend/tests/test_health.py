@@ -1,7 +1,10 @@
+"""Healthcheck: não usa banco real; a sessão é substituída por um dublê."""
+
 from collections.abc import AsyncIterator
 from typing import Any
 
-from fastapi.testclient import TestClient
+import pytest
+from httpx import ASGITransport, AsyncClient
 from sqlalchemy.exc import OperationalError
 
 from app.db.session import get_session
@@ -21,6 +24,13 @@ class FakeSession:
         self.executed.append(str(statement))
 
 
+@pytest.fixture
+async def http() -> AsyncIterator[AsyncClient]:
+    async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
+        yield client
+    app.dependency_overrides.clear()
+
+
 def override_session(fake: FakeSession) -> None:
     async def _get_session() -> AsyncIterator[FakeSession]:
         yield fake
@@ -28,36 +38,36 @@ def override_session(fake: FakeSession) -> None:
     app.dependency_overrides[get_session] = _get_session
 
 
-def test_liveness_returns_ok(client: TestClient) -> None:
-    response = client.get("/health")
+async def test_liveness_returns_ok(http: AsyncClient) -> None:
+    response = await http.get("/health")
 
     assert response.status_code == 200
     assert response.json() == {"status": "ok"}
 
 
-def test_readiness_ok_when_database_responds(client: TestClient) -> None:
+async def test_readiness_ok_when_database_responds(http: AsyncClient) -> None:
     fake = FakeSession()
     override_session(fake)
 
-    response = client.get("/health/ready")
+    response = await http.get("/health/ready")
 
     assert response.status_code == 200
     assert response.json() == {"status": "ok", "database": "ok"}
     assert fake.executed == ["SELECT 1"]
 
 
-def test_readiness_503_when_database_unreachable(client: TestClient) -> None:
+async def test_readiness_503_when_database_unreachable(http: AsyncClient) -> None:
     error = OperationalError("SELECT 1", {}, ConnectionRefusedError("connection refused"))
     override_session(FakeSession(error=error))
 
-    response = client.get("/health/ready")
+    response = await http.get("/health/ready")
 
     assert response.status_code == 503
     assert response.json() == {"status": "unavailable", "database": "unavailable"}
 
 
-def test_openapi_schema_lists_health_routes(client: TestClient) -> None:
-    paths = client.get("/openapi.json").json()["paths"]
+async def test_openapi_schema_lists_routes(http: AsyncClient) -> None:
+    paths = (await http.get("/openapi.json")).json()["paths"]
 
-    assert "/health" in paths
-    assert "/health/ready" in paths
+    for path in ("/health", "/health/ready", "/auth/login"):
+        assert path in paths
