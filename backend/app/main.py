@@ -4,7 +4,7 @@ import logging
 
 from fastapi import FastAPI
 
-from app.api.routes import auth, health
+from app.api.routes import auth, health, species
 from app.core.config import get_settings
 
 
@@ -17,7 +17,7 @@ def create_app() -> FastAPI:
         description="Recomenda quando e como regar cada planta.",
         version="0.2.0",
     )
-    for module in (health, auth):
+    for module in (health, auth, species):
         app.include_router(module.router)
     return app
 
